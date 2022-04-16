@@ -4,6 +4,6 @@ WORKDIR /calculatorapp
 
 COPY ./ ./
 
-CMD ["java", "-cp", "./target/DevOpsCalculator-1.0-SNAPSHOT.jar", "calculator.Calculator"]
+CMD ["java", "-jar", "./target/DevOpsCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar"]
 
 
