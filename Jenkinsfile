@@ -16,12 +16,10 @@ pipeline{
 		stage('Maven Build')
 		{
 			steps{
-				sh 'mvn clean'
-				sh 'mvn test'
-				sh 'mvn install'
+				sh 'mvn clean install'
 			}
 		}
-		stage('Docker Image Creation')
+		stage('Docker Image Build and Push')
 		{
 			steps{
 			    echo 'docker tag'
