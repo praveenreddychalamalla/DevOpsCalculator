@@ -13,7 +13,7 @@ pipeline{
 				git 'https://github.com/praveenreddychalamalla/DevOpsCalculator.git'
 			}
 		}
-		stage('Maven Build')
+		stage('Maven Build and Test')
 		{
 			steps{
 				sh 'mvn clean install'
@@ -30,6 +30,8 @@ pipeline{
 				sh 'docker push 9542289925/calculator_app'
 				echo 'docker logout'
 				sh 'docker logout'
+				sh 'docker rm $(docker ps -a -q)'
+
 			}
 		}
 		stage('Ansible Deploy'){
