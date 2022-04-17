@@ -30,7 +30,6 @@ pipeline{
 				sh 'docker push 9542289925/calculator_app'
 				echo 'docker logout'
 				sh 'docker logout'
-				sh 'docker rm $(docker ps -a -q)'
 
 			}
 		}
